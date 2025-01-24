@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/d5622e0592.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="app.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>microminers</title>
+    <link rel="icon" href="favicon/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header"> 
+        <a href="index.html" class="logo"><img src="logo.png" alt="Microminers Logo" style="width: 80px; height: auto;padding:none;">
+            <span>microminers</span></a>
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <nav class="navbar"> 
+                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Members</a>
+                <a href="index.html">Projects</a>
+                <a href="index.html">Contact</a>
+            </nav>
+    </header> 
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+const navbar = document.querySelector('.navbar');
+
+menuIcon.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
+
+    </script>
+    <div id="project-container" class="side-in">
+        
+            <div class="header2">
+                <h1 class="project-title">
+                    <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span> 
+                    <span>A</span><span>r</span><span>y</span><span>a</span>
+                </h1>
+           
+            
+            <p class="project-description">Innovative Drone technology for Public Safety</p>
+        </div>
+        </div>
+        <div class="project-status">
+            <span class="status-tag">In Development</span>
+        </div>
+        
+    
+        <!-- Problem and Solution Section -->
+        <div class="problem-solution-section">
+            <div class="section-header">
+                <h2>Problem & Solution</h2>
+            </div>
+            <div class="cards-container">
+                <!-- Problem Card -->
+                <div class="card problem-card">
+                    <div class="card-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3>Problem</h3>
+                        <p>
+                            Indian soldiers face significant risks in combat because they often struggle to determine the direction of enemy gunfire precisely.
+                            Civilians and VIPs are at risk due to increasing illegal guns in India.
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Solution Card -->
+                <div class="card solution-card">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3>Solution</h3>
+                        <p>
+                            Six omnidirectional microphones connected to an FPGA system in a hexacopter drone detect gunshots and triangulate their source using TDOA. The data is shown on a real-time map interface.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+<!-- Timeline Section -->
+<div class="timeline-section">
+    <div class="section-header">
+        <h2>Project Timeline</h2>
+    </div>
+    <div class="timeline">
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item scroll-down-show">
+            <div class="timeline-date">August 2024</div>
+            <div class="timeline-content">
+                <h3>Idea Conception & Initial Planning</h3>
+                <p>Brainstormed the innovative drone technology for public safety.</p>
+            </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item scroll-down-show">
+            <div class="timeline-date">September 2024</div>
+            <div class="timeline-content">
+                <h3>Component Research & Design</h3>
+                <p>Selected components like Altera Cyclone II FPGA and MAX9814 microphones.</p>
+            </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item scroll-down-show">
+            <div class="timeline-date">October 2024</div>
+            <div class="timeline-content">
+                <h3>System Simulation & Testing</h3>
+                <p>Simulated the detection algorithm and implemented it on the FPGA with Verilog.</p>
+            </div>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="timeline-item scroll-down-show">
+            <div class="timeline-date">November 2024</div>
+            <div class="timeline-content">
+                <h3>Integration with Drone</h3>
+                <p>Integrated GPS module and displayed real-time data on the Raspberry Pi screen.</p>
+            </div>
+        </div>
+
+        <!-- Timeline Item 5 -->
+        <div class="timeline-item scroll-down-show">
+            <div class="timeline-date">December 2024</div>
+            <div class="timeline-content">
+                <h3>System Enhancement</h3>
+                <p>Improved signal accuracy and integrated real-time display on the drone's LCD controller.</p>
+            </div>
+        </div>
+
+        <!-- Timeline Item 6 -->
+        <div class="timeline-item scroll-down-show">
+            <div class="timeline-date">January 2025</div>
+            <div class="timeline-content">
+                <h3>Drone Communication & Power Monitoring</h3>
+                <p>Monitored drone health with ESP32, and live data was displayed on a website.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+    <script>
+        // Detect scroll direction and trigger animations for scrolling down
+let lastScrollTop = 0;
+
+window.addEventListener("scroll", function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) { // Scrolling Down
+        let elements = document.querySelectorAll('.scroll-down-show');
+        elements.forEach((element) => {
+            let elementPosition = element.getBoundingClientRect().top;
+            if (elementPosition <= window.innerHeight) {
+                element.classList.add('visible');
+            }
+        });
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Make sure we don't get negative scroll values
+}, false);
+
+    </script>
+    <div class="social-media">
+        <h2>Follow Us on</h2>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/microminers_/?utm_source=ig_web_button_share_sheet" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="icon twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="icon github"> <i class="fa-brands fa-github"></i> </a>
+          <a href="#" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="copyrights">
+        <p> &#169 2025 microminers | All Rights Reserved </p>
+      </div>
+    </div>
+</body>
+</html>

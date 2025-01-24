@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    background: #0d1117;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+}
+
+.text-container {
+    position: relative;
+    display: inline-block;
+    height: 4rem;
+    overflow: hidden;
+}
+
+.animated-text {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: transparent;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b, #ffcc33);
+    background-clip: text;
+    -webkit-background-clip: text;
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    animation: dynamicChange 6s infinite ease-in-out;
+    opacity: 0;
+}
+
+@keyframes dynamicChange {
+    0%, 20% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    25% {
+        transform: rotateX(90deg) scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: rotateY(180deg) scale(1.2);
+        opacity: 1;
+    }
+    75% {
+        transform: translateX(20px) scale(1) skewX(10deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.animated-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.4), rgba(255,255,255,0));
+    filter: blur(12px);
+    opacity: 0.1;
+    animation: shimmer 6s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateX(50%);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0.1;
+    }
+}
