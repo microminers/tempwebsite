@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <script src="https://kit.fontawesome.com/d5622e0592.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="app.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>microminers</title>
     <link rel="icon" href="favicon/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,51 +46,41 @@ menuIcon.addEventListener('click', () => {
                     <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span> 
                     <span>A</span><span>r</span><span>y</span><span>a</span>
                 </h1>
-           
-            
-            <p class="project-description">Innovative Drone technology for Public Safety</p>
-        </div>
-        </div>
+        
         <div class="project-status">
             <span class="status-tag">In Development</span>
         </div>
         
     
-        <!-- Problem and Solution Section -->
-        <div class="problem-solution-section">
-            <div class="section-header">
-                <h2>Problem & Solution</h2>
-            </div>
+   
+      
+            
             <div class="cards-container">
-                <!-- Problem Card -->
+                 
                 <div class="card problem-card">
                     <div class="card-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
+                        <h2>Description</h2>
                     </div>
-                    <div class="card-body">
-                        <h3>Problem</h3>
+                    <div class="card-body"> 
                         <p>
-                            Indian soldiers face significant risks in combat because they often struggle to determine the direction of enemy gunfire precisely.
-                            Civilians and VIPs are at risk due to increasing illegal guns in India.
+                            This innovative system boasts a unique, modular design that allows for attachable and detachable components, enabling 
+                            unparalleled adaptability and flexibility. Furthermore, the system is highly customizable, allowing users to enhance its capabilities by attaching various modules such as cameras, sensors, and 
+                            other specialized components. Additionally, it can be integrated with Artificial Intelligence (AI) for autonomous 
+                            operations, enabling seamless, self-directed function and unlocking new possibilities for automation, optimization, 
+                            and innovation.
+                            
                         </p>
+                        <div>
+                            <img src="Images/Drone.png" alt="Image of a drone"> 
+                        </div>
                     </div>
                 </div>
     
-                <!-- Solution Card -->
-                <div class="card solution-card">
-                    <div class="card-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <div class="card-body">
-                        <h3>Solution</h3>
-                        <p>
-                            Six omnidirectional microphones connected to an FPGA system in a hexacopter drone detect gunshots and triangulate their source using TDOA. The data is shown on a real-time map interface.
-                        </p>
-                    </div>
-                </div>
+             
             </div>
+          </div>   
         </div>
-    
+ 
 <!-- Timeline Section -->
 <div class="timeline-section">
     <div class="section-header">
@@ -106,7 +101,7 @@ menuIcon.addEventListener('click', () => {
             <div class="timeline-date">September 2024</div>
             <div class="timeline-content">
                 <h3>Component Research & Design</h3>
-                 
+                
             </div>
         </div>
 
@@ -124,7 +119,7 @@ menuIcon.addEventListener('click', () => {
             <div class="timeline-date">November 2024</div>
             <div class="timeline-content">
                 <h3>Integration with Drone</h3>
-                
+                 
             </div>
         </div>
 
@@ -142,7 +137,6 @@ menuIcon.addEventListener('click', () => {
             <div class="timeline-date">January 2025</div>
             <div class="timeline-content">
                 <h3>Drone Communication & Power Monitoring</h3>
-                 
             </div>
         </div>
     </div>
@@ -150,13 +144,13 @@ menuIcon.addEventListener('click', () => {
 
     </div>
     <script>
-        // Detect scroll direction and trigger animations for scrolling down
+         
 let lastScrollTop = 0;
 
 window.addEventListener("scroll", function() {
     let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScroll > lastScrollTop) { // Scrolling Down
+    if (currentScroll > lastScrollTop) {  
         let elements = document.querySelectorAll('.scroll-down-show');
         elements.forEach((element) => {
             let elementPosition = element.getBoundingClientRect().top;
@@ -165,7 +159,7 @@ window.addEventListener("scroll", function() {
             }
         });
     }
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Make sure we don't get negative scroll values
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;  
 }, false);
 
     </script>
