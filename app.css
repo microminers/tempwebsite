@@ -325,7 +325,9 @@ body {
     color: #ecf0f1;
     margin-bottom: 10px;
 }
-
+.card-body img {
+    padding-left:35%;
+}
 .card-body p {
     font-size: 1.1rem;
     color: #bdc3c7;
