@@ -65,10 +65,12 @@ font-family: 'orbitron';
 }
 
 .navbar a:hover,
-.navbar a.active{
-color: var(--main-color);
-border-bottom: 3px solid var(--main-color);
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
+
 
 #menu-icon{
 font-size: 3.6rem;
@@ -133,9 +135,7 @@ section{
     flex-basis: 30%;
 }
  
-span{
-    color: var(--main-color);
-}
+ 
 .logo span{
     color: var(--main-color);
 }
@@ -143,7 +143,6 @@ span{
 
 
 .home-img img{
-    
     top: 0rem;
     width: 25vw;
     border-radius: 50%;
@@ -299,8 +298,17 @@ span{
 }
 
 .stat-text{
-    font-family: 'Audiowide';
-    font-size: 4rem;
+    font-family:'orbitron';
+    font-size: 3.5rem;
+    padding-left: 1rem;
+    background-clip: text;
+    color: transparent;
+    background: linear-gradient(90deg, #f39c12, #db9b25, #e8822eea);
+    -webkit-background-clip: text;
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    font-weight: bolder;
 }
 .typewriter-text {
     font-family: 'Courier New', Courier, monospace; /* Typewriter font */
@@ -309,7 +317,7 @@ span{
      
      /* Prevents text wrapping */
     overflow: hidden; /* Hides the text initially */
-    border-right: 4px solid #000; /* Creates the blinking cursor */
+    border-right: 4px solid #fffcfc; /* Creates the blinking cursor */
     animation: typing 10s steps(60) 1s 1 normal both, blink-caret 0.75s step-end infinite;
   }
   
@@ -335,75 +343,46 @@ span{
     overflow: hidden;
     border-radius: 15px;
 }
-
+ 
 .animated-text {
-    width:100%;  
+    font-family:'orbitron';
     font-size: 3.5rem;
-    border-radius: 15px;
-    font-family: 'orbitron';
-    text-transform: uppercase;
+    padding-left: 1rem;
+    background-clip: text;
     color: transparent;
     background: linear-gradient(90deg, #f39c12, #dbb425c5, #150b0b95);
-    background-clip: text;
     -webkit-background-clip: text;
-    position: relative;
     display: inline-block;
     white-space: nowrap;
-    animation: dynamicChange 6s infinite ease-in-out;
-    opacity: 0;
+    position: relative;
+    font-weight: bolder;
+    animation: scrollSideways 4s ease-in-out forwards; /* Sideways scroll animation */
+    opacity: 0; /* Start with text invisible */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
 }
 
-@keyframes dynamicChange {
-    0%, 20% {
-        transform: scale(1) rotate(0deg);
+@keyframes scrollSideways {
+    0% {
+        transform: translateX(0); /* Start at current position */
+        opacity: 1; /* Text visible */
+    }
+    10% {
         opacity: 1;
     }
-    25% {
-        transform: rotateX(90deg) scale(0.8);
+    80% {
+        transform: translateX(0); /* Keep the text in place */
+        opacity: 1;
+    }
+    90% {
+        transform: translateX(100%); /* Slide to the right */
         opacity: 0;
     }
-    50% {
-        transform: rotateY(180deg) scale(1.2);
-        opacity: 1;
-    }
-    75% {
-        transform: translateX(20px) scale(1) skewX(10deg);
-        opacity: 0.8;
-    }
     100% {
-        transform: translateX(0) scale(1);
-        opacity: 1;
+        transform: translateX(100%); /* Keep offscreen to the right */
+        opacity: 0;
     }
 }
 
-.animated-text::after {
-    font-family: 'orbitron';
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(248, 241, 241, 0.701), rgba(255,255,255,0));
-    filter: blur(50px);
-    opacity: 0.1;
-    animation: shimmer 6s infinite;
-}
-
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0.1;
-    }
-    50% {
-        transform: translateX(50%);
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateX(100%);
-        opacity: 0.1;
-    }
-}
 
  
 
@@ -812,10 +791,10 @@ transform: translate(-50%, -50%);
     margin-top: 5.5rem;
   }
 .card-icon1 a i{
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 .card-icon2 a i{
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
 }
 .card-icon3 a i{
     margin-top: 1.5rem;
@@ -824,7 +803,7 @@ transform: translate(-50%, -50%);
     margin-top: 2.5rem;
 }
 .card-icon5 a i{
-    margin-top: 0rem;
+    margin-top: 0.5rem;
 }
 .card-icon6 a i{
     margin-top: 1.5rem;
@@ -1040,11 +1019,12 @@ transform: translate(-50%, -50%);
     line-height: 1;
     background-color: rgb(12, 22, 45);
     justify-content: center;
+    color: rgb(155, 152, 152);
 }
 
 .tagline h1 {
   font-size: 2rem; 
-  color:  rgb(129, 147, 178);
+  color: rgb(155, 152, 152);
   font-family: 'orbitron';
 }
 
@@ -1054,7 +1034,6 @@ transform: translate(-50%, -50%);
   font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace) !important;
   visibility: hidden;  
 }
-
  
 .cursor {
     display: inline-block;
@@ -1068,7 +1047,7 @@ transform: translate(-50%, -50%);
 
 @keyframes blink {
     50% {
-        opacity: 0;
+        opacity: 1  ;
     }
 }
   
@@ -1129,7 +1108,7 @@ transform: translate(-50%, -50%);
   }
 
   .social-media{
-    background: linear-gradient(135deg, #481f49dc, #04265a64,#040d21e2);  
+    background: linear-gradient(135deg, #deac17a1, #50504eef,#0000007e);  
     padding: 20px 20px;
     margin-top: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
